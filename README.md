@@ -166,4 +166,33 @@ When calling the ‘Add Transaction’ method in the API, you are required to pa
 
 Once you have followed the Trustev API integration steps, you can test your integration by simply passing over the necessary data to our system.
 
+<b>Note:</b> If you are trying to obtain a Trustev Profile for a social network ID, please make sure you have already shared with Trustev your access to the social network API and also the specific customer access token you are querying the social profile for.
+
+#### 5.1.1 The Trustev Session Id
+
+To protect the Trustev Session Id from hijacking, Trusted includes a hashed digital signature. This signature is a Sha256Hash, the format of which is explained below. If you are reading the Trustev Session Id for any purpose, you should always check the signature to ensure if it is valid.
+
+<b>If the signature is not valid, then the session has been tampered with. You should immediately reject the order.</b>
+
+The digital signature for the Trustev Session Id is generated in 2 stages. The first stage is to generate a Sha256Hash of the string [Username].[Private Key].[Timestamp]. The second stage is to generate aSha256Hash of [Stage 1].[Private Key].[Trustev Session Id], where [Stage 1] is the result of the first Sha256Hash.
+
+Once you have created the Sha256Hash, you should compare this to the digital signature. Once the digital signature matches up with the Sha256Hash you have generated, you can safely use the Trustev Session Id.
+
+<b>Note:</b> Your Private Key is available by logging into trustev.com. The private key should never be shared with anybody, or made visible to any one. If you are building the private key into any application, it should not be stored in plain text. If your private key is compromised, Trustev cannot create an accurate Trustev profile for any transaction.
+
+### 5.2 Solution #2
+
+With this custom integration of Trustev.js, you can use Trustev’s social layer and social authentication methods, but still maintain full control over the flow of the transaction. The steps involved are relatively simple, and only require a small amount of integration and testing work.
+
+Step 1: Integrate Trustev.js as in Section 2.1 of this document
+
+Step 2: Integrate Trustev Social Authenticaiton, as in Section 2.2 of this document.
+
+Step 3: Integrate the Trustev Profile request javascript as in Section 3.1 of this document
+
+Step 4: Create a custom Javascript function to handle a response from Trustev.js
+
+
+
+
 
