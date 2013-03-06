@@ -144,4 +144,9 @@ When a basic integration of the Trustev.js module does not work for you, Trustev
 
 <i>Do you have an existing social layer (i.e. sign in with Facebook/Twitter/LinkedIn) on your site?</i>
 
+If <b>Yes</b>
+ * Use Custom Integration Solution #1
+ 
+If <b>No</b>
+ * Use Custom Integration Solution #2
 
