@@ -103,4 +103,34 @@ Once you have done that, add the following code to the same page where you are d
 
 This code must be added <b>after</b> your reference to Trustev.js.
 
+    <script type=”text/javascript”>
+      //create the Trustev Queue
+      var _trustevQ = TrustevQ || [];
+      //add a new transaction to the Trustev Queue
+      _trustevQ.push([‘_addTrans’,
+        ‘<Transaction Number>’,
+        <Total Before Tax>,
+        <Total Discount>,
+        <Total Delivery>,
+        <Total Tax>,
+        <Currency>,
+      ]);
+      //add a new item to the just created transaction
+      //this must be called for every item in the cart
+      _trustevQ.push([‘_addItem’,
+        ‘<Product Name>’,
+        ‘<Product Sku>’,
+        ‘<Product Category>’,
+        ‘<Url>’,
+        ‘<Image Url>’,
+        <Quantity>,
+        <Total Before Tax>,
+        <Discount>,
+        <Total Tax>
+      ]);
+      //once all items have been added to the transaction
+      //you can commit the transaction to Trustev
+      _trustevQ.push([‘_trackTrans’]);
+    </script>
+
 
