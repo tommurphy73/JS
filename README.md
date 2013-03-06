@@ -236,3 +236,4 @@ If you wanted to request GB English, your refernce to Trustev.js would now look 
 In this appendix, you will find visual representations of the CSS classes used to control the display of the Trustev Social Authentication block. All of these styles can be overridden by you to enabled a custom display.
 
 
+<img src="Apendix_A1.png"> </img>
