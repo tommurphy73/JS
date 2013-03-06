@@ -31,4 +31,19 @@
 </table>
 
 
+## 2.0 Integrate Trustev.js
+===========================
+
+Trustev.js can be integrated into any website within minutes. Trustev.js is a dynamic Javascript library that is repsonsible for determining the trust of any active session on any site, and can either be setup to control the session flow, or hand control back to the site once a trust profile is required.
+
+### 2.1 Trustev.js
+==================
+
+To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from trustev.com.
+Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the closing body tag, and the closing html tag.
+
+
+     </body>
+         <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey” />
+     </html>
 
