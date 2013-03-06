@@ -230,3 +230,9 @@ For example, if you wanted to request US English, your code would be en-US. If y
 If you wanted to request GB English, your refernce to Trustev.js would now look like the following:
 
       <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey&culture=en-GB” />
+      
+## Appendix A
+
+In this appendix, you will find visual representations of the CSS classes used to control the display of the Trustev Social Authentication block. All of these styles can be overridden by you to enabled a custom display.
+
+
