@@ -19,7 +19,7 @@
 
 
 <table> 
- tr><th width=308 align=left>    Code   </th><th width=308 align=left>  Explanation    </th></tr>
+ <tr><th width=308 align=left>    Code   </th><th width=308 align=left>  Explanation    </th></tr>
  <tr><td>                        100    </td><td>                  Continue            </td></tr>
  <tr><td>                        200    </td><td>                  OK                  </td></tr>
  <tr><td>                        400    </td><td>                  Bad Request         </td></tr>
