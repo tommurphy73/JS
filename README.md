@@ -209,4 +209,23 @@ Handling a Trustev.js reponse requires you to implement a Javascript function (d
     }
 
 
+## 6.0 Customisation
+====================
 
+While Trustev.js is designed to make integration as simple as possible, we also allow some customisation of the look and feel of the Trustev Authentication block.
+
+### 6.1 Custom Styles
+
+The Trustev Authentication block is styled to slot directly, but unobtrusively into your checkout process. By default, the Trustev stylesheet is applied to the Trustev Authentication block, but you can override any styles you wish. The only thing we ask is that you keep the Trustev logo displayed in your custom implementation.
+
+A detailed overview of CSS classes applied to the Trustev block can be found in Appendix A of this document.
+
+### 6.2 Localisation
+
+Localisation of Trustev.js into different languages is possible, by simply appending the desired language as an additional parameter to your reference to Trustev.js. The parameter name is culture, and the value passed must be a valid culture format of [ISO639-1]-[ISO 3166-1 Alpha 2].
+
+
+For example, if you wanted to request US English, your code would be en-US. If you wanted to request Swiss French, you would request fr-CH.
+
+If you wanted to request GB English, your refernce to Trustev.js would now look like the following:
+      <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey&culture=en-GB” />
