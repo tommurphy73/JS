@@ -237,3 +237,36 @@ In this appendix, you will find visual representations of the CSS classes used t
 
 
 <img src="Apendix_A1.png"> </img>
+
+<img src="Apendix_A2.png"> </img>
+
+<img src="Apendix_A3.png"> </img>
+
+<img src="Apendix_A4.png"> </img>
+
+<img src="Apendix_A5.png"> </img>
+
+<img src="Apendix_A6.png"> </img>
+
+<img src="Apendix_A7.png"> </img>
+
+<img src="Apendix_A8.png"> </img>
+
+<img src="Apendix_A9.png"> </img>
+
+<img src="Apendix_A10.png"> </img>
+
+<img src="Apendix_A11.png"> </img>
+
+<img src="Apendix_A12.png"> </img>
+
+<img src="Apendix_A13.png"> </img>
+
+<img src="Apendix_A14.png"> </img>
+
+<img src="Apendix_A15.png"> </img>
+
+<img src="Apendix_A16.png"> </img>
+
+
+
