@@ -134,3 +134,14 @@ This code must be added <b>after</b> your reference to Trustev.js.
     </script>
 
 
+
+Once you have implemented this code, and commited the transaction to Trustev, Trustev.js will communicate with the Trustev servers. The Trustev servers will analyse all available data pertaining to the customer, including social network data, current transaction details such as order value, types of products and physical information about the customer. Once all data has been analysed, Trustev servers will return a Trust Profile to Trustev.js, which will then either allow, flag or block the transaction automatically.
+
+## 5.0 Custom Integration
+=========================
+
+When a basic integration of the Trustev.js module does not work for you, Trustev can facilitate a custom integration. There are 2 customer integration options available, the one you choose depends on how you answer the following question:
+
+<i>Do you have an existing social layer (i.e. sign in with Facebook/Twitter/LinkedIn) on your site?</i>
+
+
