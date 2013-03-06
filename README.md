@@ -60,3 +60,47 @@ You can add this div anywhere within the body tags of your page.
      <div id=”TrustevProfileBox”></div>
      . . . . . . . . . . .
      </body>
+     
+## 3.0 Functionality
+====================
+
+Trustev.js brings with it a whole host of functions to help secure your site, but also to help make your eCommerce process more friction less for your customers.
+
+Trustev.js brings with it a whole host of functions to help secure your site, but also to help make your eCommerce process more friction less for your customers.
+
+### 3.1 Trustev Social Authentication
+
+Trustev.js helps to bring Social Authentication to your web site. Social Authenticaiton enables customers to sign in with one of their social network accounts, such as Facebook, Twitter or LinkedIn. Using Trustev Social Authentication is the quickest way to integrate Social Authentication into your site.
+
+However, if you already have Social Authentication built into your site, you can always turn this feature off by logging in to your account on trustev.com and going to ‘My Sites’ -> ‘Site Settings’.
+
+### 3.2 Trustev Auto Fill
+
+Integrating Trustev.js into your site brings a whole host of functions to improve the customer experience. One of these is Trustev Auto Fill. Trustev Auto Fill populates your eCommerce process with the customer’s personal details, such as name, contact details and delivery/billing address.
+
+Trustev Auto Fill can be used in conjunction with Trustev Social Authenticaiton. With Trustev Social Authenticaiton enabled, any customer that signs in using a social network will automatically have their details pre-populated into their checkout form. This signiifcantally reduces the amount of time required by the customer to complete the order, and has been proven to increase conversion rates.
+
+If you have chosen to disable Trustev Social Authentication, you can still use Trustev Auto Fill. Trustev Auto Fill will work in combination with Social Network details that you share with us via the Trustev API, and will return the customer’s details to you, where you can choose how to handle this data. For more information on this, please see Section 5.1 of this document.
+
+If you wish to disable Trustev Auto Fill, you can do this by logging in to your account on trustev.com and going to ‘My Sites’ -> ‘Site Settings’.
+
+### 3.3 Trustev Remember Me
+
+Trustev.js utilises numerous technologies to remember your customer’s personal details on a particular device. If the customer’s device comes back to your site, Trustev.js will load the customers personal details and pre-populate your checkout form with these details.
+
+If you wish to disable Trustev Remember me, you can do this by logging in to your account on trustev.com and going to ‘My Sites’ -> ‘Site Settings’.
+
+## 4.0 Basic Integration
+========================
+
+The basic integration option for Trustev.js enables Trustev to authenticate a customer using a social network, and to automatically protect you from un-trusted customers.
+
+Basic integraiton is the simplest way to get Trustev protecting your site from un-trusted customers. All you need to do is follow the steps in sections 2.1 and 2.2.
+
+Once you have done that, add the following code to the same page where you are displaying the Trustev Authentication block. This code is responsible for sharing specifics of the customer and the order with Trustev, which will then be analysed to create a Trust Profile.
+
+### 4.1 Trustev Profile
+
+This code must be added <b>after</b> your reference to Trustev.js.
+
+
