@@ -193,6 +193,20 @@ Step 3: Integrate the Trustev Profile request javascript as in Section 3.1 of th
 Step 4: Create a custom Javascript function to handle a response from Trustev.js
 
 
+#### 5.2.1 Handling a Trustev.js Response
+
+Handling a Trustev.js reponse requires you to implement a Javascript function (defined below). This Javascript function will be responsible for reading the Trustev Profile, once this has been completed full control of the transaction is now back with the merchant, and you decide how to proceed.
+
+    function ProcessTrustevProfile(result)
+    {
+      var overallScore = result.profile.trust.overallScore;
+      var billingAddressScore = result.profile.trust.billingAddressScore;
+      var deliveryAddressScore = result.profile.trust.deliveryAddressScore;
+      
+      //your custom code to control the flow of the transaction
+      //we recommend any overallScore above 70 is a pass, 65-70
+      //is a flag, and below 65 is a fail
+    }
 
 
 
