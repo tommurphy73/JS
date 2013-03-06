@@ -37,9 +37,9 @@
 Trustev.js can be integrated into any website within minutes. Trustev.js is a dynamic Javascript library that is repsonsible for determining the trust of any active session on any site, and can either be setup to control the session flow, or hand control back to the site once a trust profile is required.
 
 ### 2.1 Trustev.js
-==================
 
 To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from trustev.com.
+
 Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the closing body tag, and the closing html tag.
 
 
@@ -47,3 +47,16 @@ Once you have your public key, you can integrate Trustev.js into your site with 
          <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey” />
      </html>
 
+### 2.2 Trustev Social Authentication
+
+Trustev.js Social Authentication is an optional feature for our partners, which enhances security and aims to improve the customer experience and conversions.
+
+Trustev Social Authentication is designed to fit seamlessly into your existing checkout process. To setup Trustev Social Authentication, simply login to your Trustev account and answer a few questions about your checkout process. Once you have completed this step, simply add a new div (the id must be “TrustevProfileBox”) to the page where your customers normally enter their personal details/delivery address/billing address, and Trustev.js will import the necessary styles and create the content of the div. 
+
+You can add this div anywhere within the body tags of your page.
+
+     <body>
+     . . . . . . . . . . . 
+     <div id=”TrustevProfileBox”></div>
+     . . . . . . . . . . .
+     </body>
