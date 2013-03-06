@@ -150,3 +150,17 @@ If <b>Yes</b>
 If <b>No</b>
  * Use Custom Integration Solution #2
 
+
+### 5.1 Solution #1
+
+With this custom integration of Trustev.js, you can continue to utilise any social layer you already have in place. The steps involved are relatively simple, and only require a small amount of integration and testing work.
+
+Step 1: Integrate Trustev.js as in Section 2.1 of this document
+
+Step 2: Download the Trustev ‘Social and Transaction API Documentation’ from trustev.com
+
+Step 3: Follow the instructions in this document to integrate with the Trustev API
+
+
+
+
