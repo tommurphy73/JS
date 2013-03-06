@@ -228,4 +228,5 @@ Localisation of Trustev.js into different languages is possible, by simply appen
 For example, if you wanted to request US English, your code would be en-US. If you wanted to request Swiss French, you would request fr-CH.
 
 If you wanted to request GB English, your refernce to Trustev.js would now look like the following:
+
       <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey&culture=en-GB” />
