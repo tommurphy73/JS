@@ -161,6 +161,9 @@ Step 2: Download the Trustev ‘Social and Transaction API Documentation’ from
 
 Step 3: Follow the instructions in this document to integrate with the Trustev API
 
+When calling the ‘Add Transaction’ method in the API, you are required to pass over a Trustev Session Id in the request. The Trustev Session Id is stored in a Javascript variable named <b>_teSessionId</b>. There is also a second variable called <b>_teDigitalSignature</b>. This variable is hashed and encrypted so as to prevent any tampering with the Trustev Session Id. Details of how to read this variable are in section 5.1.1. The final variable available is <b>_teTimestamp</b>, which is used during the validation of the Session Id and Digital Signature.
 
+
+Once you have followed the Trustev API integration steps, you can test your integration by simply passing over the necessary data to our system.
 
 
