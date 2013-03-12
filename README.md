@@ -223,10 +223,53 @@ If you wanted to request GB English, your refernce to Trustev.js would now look 
 Trustev JS provides the option to listen for call backs from the Trustev JS service. A list of the currently available web hooks are available below.
 
 <table> 
- <tr><th width=205 align=left>    TrustevJS Function   </th><th width=205 align=left>  Web Hook    </th><th width=205 align=left>  Parameter    </th></tr>
+ <tr><th width=278 align=left>    TrustevJS Function   </th><th width=278 align=left>  Web Hook    </th><th width=278 align=left>  Parameter    </th></tr>
  <tr><td>Authentication</td><td>TrustevAuthenticationHook</td><td>TrustProfileResult OR JS Error</td></tr>
 </table> 
 
+#### 6.3.1 TrustProfileResult
+
+    function TrustProfileResult(_result, _profile) 
+    {
+      this.resultMessage = _result;
+      this.profile = _profile;
+    }
+    function ResultMessage(_message, _code) 
+    {
+      this.Message = _message;
+      this.Code = _code;
+    }
+    function Fieldset(_name, _value, _type) 
+    {
+      this.name = _name;
+      this.value = _value;
+      this.type = _type;
+    }
+    function TrustProfile(_firstName, _lastName, _phoneNumber, _emailAddress, _address1, _address2, _address3, _city, _state, _postCode, _country, _trust) 
+    {
+      this.TrustevId = new Fieldset('[[TrustevAuthId]]', _trustevAuthId, 'trustev');
+      this.SocialNetwork = 
+      [ 
+         new Fieldset('[[SocialNetworkId]], _socialNetworkId, 'Facebook'), 
+         new Fieldset('[[SocialNetworkId]], _socialNetworkId, 'LinkedIn'), 
+         new Fieldset('[[SocialNetworkId]], _socialNetworkId, 'Twitter')
+      ],
+      this.firstName = new Fieldset('[[fieldFirstName]]', _firstName, 'field');
+      this.lastName = new Fieldset('[[fieldLastName]]', _lastName, 'field');
+      this.phoneNumber = new Fieldset('[[fieldPhoneNumber]]', _phoneNumber, 'field');
+      this.emailAddress = new Fieldset('[[fieldEmailAddress]]', _emailAddress, 'field');
+      this.address1 = new Fieldset('[[fieldAddress1]]', _address1, 'field');
+      this.address2 = new Fieldset('[[fieldAddress2]]', _address2, 'field');
+      this.address3 = new Fieldset('[[fieldAddress3]]', _address3, 'field');
+      this.city = new Fieldset('[[fieldCity]]', _city, 'field');
+      this.state = new Fieldset('[[fieldState]]', _state, 'field');
+      this.postCode = new Fieldset('[[fieldPostCode]]', _postCode, 'field');
+      this.country = new Fieldset('[[fieldCountry]]', _country,'field');
+      this.trust = new Fieldset('TrustevTrust', _trust, 'parameter');
+      this.continueButton = new Fieldset('TrustevContinueButton', '[[buttonContinue]]', 'button');
+      this.autoDisableCheckout = new Fieldset('TrustevAutoDisable', '[[paramAutoDisable]]', 'parameter');
+      this.autoDisplayMessage = new Fieldset('TrustevNotify', '[[paramNotify]]', 'parameter');
+    }
 
 ## Appendix A
 
