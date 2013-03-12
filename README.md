@@ -1,17 +1,3 @@
-# Document Properties
-========================
-
-## Revision Log
-
-<table> 
- <tr><th width=308 align=left>   Alteration         </th><th width=308 align=left>   Date        </th><th width=308 align=left>   Version Number  </th><th width=308 align=left> Changed By    </th></tr>
- <tr><td>                        Document Created              </td><td>             2012-11-22  </td><td>                        1.0             </td><td>                      Chris Kennedy </td></tr>
- <tr><td>                        Added Section 5.1.1           </td><td>             2012-11-23  </td><td>                        1.0.1           </td><td>                      Chris Kennedy </td></tr>
- <tr><td>                        Added Appendix A              </td><td>             2012-11-23  </td><td>                        1.0.2           </td><td>                      Chris Kennedy </td></tr>
- <tr><td>                        Added te_Timestamp to hashing </td><td>             2012-12-04  </td><td>                        1.0.3           </td><td>                      Chris Kennedy </td></tr>
-</table>
-
-
 ##1.0 API Introduction
 ======================
  
@@ -28,6 +14,7 @@
  <tr><td>                        405    </td><td>                  Method Not Allowed  </td></tr>
  <tr><td>                        406    </td><td>                  Not Acceptable      </td></tr>
  <tr><td>                        408    </td><td>                  Timeout             </td></tr>
+ <tr><td>                        500    </td><td>                  Unknown             </td></tr>
 </table>
 
 
@@ -230,7 +217,17 @@ For example, if you wanted to request US English, your code would be en-US. If y
 If you wanted to request GB English, your refernce to Trustev.js would now look like the following:
 
       <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey&culture=en-GB” />
-      
+
+### 6.3 Callbacks and Web Hooks
+
+Trustev JS provides the option to listen for call backs from the Trustev JS service. A list of the currently available web hooks are available below.
+
+<table> 
+ <tr><th width=205 align=left>    TrustevJS Function   </th><th width=205 align=left>  Web Hook    </th><th width=205 align=left>  Parameter    </th></tr>
+ <tr><td>Authentication</td><td>TrustevAuthenticationHook</td><td>TrustProfileResult OR JS Error</td></tr>
+</table> 
+
+
 ## Appendix A
 
 In this appendix, you will find visual representations of the CSS classes used to control the display of the Trustev Social Authentication block. All of these styles can be overridden by you to enabled a custom display.
