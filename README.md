@@ -31,7 +31,7 @@ Once you have your public key, you can integrate Trustev.js into your site with 
 
 
      </body>
-         <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey” />
+         <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey”></script>
      </html>
 
 ### 2.2 Trustev Social Authentication
