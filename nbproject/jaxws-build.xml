@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        -->
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-AuthenticationService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AuthenticationService"/>
+        <property name="wsdl-AuthenticationService" location="xml-resources/web-service-references/AuthenticationService/wsdl/api.trustev.com/v1/AuthenticationService.svc.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AuthenticationService" destdir="${build.generated.dir}/jax-wsCache/AuthenticationService" wsdl="${wsdl-AuthenticationService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="https://api.trustev.com/v1/AuthenticationService.svc?wsdl" xnocompile="true" xendorsed="true" package="trustev.libraries.java">
+            <depends file="${wsdl-AuthenticationService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AuthenticationService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AuthenticationService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AuthenticationService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AuthenticationService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/trustev/libraries/java"/>
+    </target>
+    <target name="wsimport-client-SocialService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SocialService"/>
+        <property name="wsdl-SocialService" location="xml-resources/web-service-references/SocialService/wsdl/api.trustev.com/v1/SocialService.svc.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SocialService" destdir="${build.generated.dir}/jax-wsCache/SocialService" wsdl="${wsdl-SocialService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="https://api.trustev.com/v1/SocialService.svc?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-SocialService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SocialService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SocialService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SocialService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SocialService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/https/api_trustev"/>
+    </target>
+    <target name="wsimport-client-TransactionService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TransactionService"/>
+        <property name="wsdl-TransactionService" location="xml-resources/web-service-references/TransactionService/wsdl/api.trustev.com/v1/TransactionService.svc.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TransactionService" destdir="${build.generated.dir}/jax-wsCache/TransactionService" wsdl="${wsdl-TransactionService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="https://api.trustev.com/v1/TransactionService.svc?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-TransactionService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TransactionService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TransactionService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TransactionService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/TransactionService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/https/api_trustev"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-AuthenticationService, wsimport-client-SocialService, wsimport-client-TransactionService"/>
+</project>
