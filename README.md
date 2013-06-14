@@ -27,12 +27,14 @@ Trustev.js can be integrated into any website within minutes. Trustev.js is a dy
 
 To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from trustev.com.
 
-Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the closing body tag, and the closing html tag.
+Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the opening head tag, and the closing head tag.
 
 
-     </body>
-         <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey”></script>
-     </html>
+     <head>
+        <script type=”text/javascript” src=”https://js.trustev.com/v1.1/Trustev.js?key=publickey”></script>
+     </head>
+	 
+You should integrate Trustev.js in every page in your site. Trustev.js collects data about how the customer is using your site, including device information and their interaction with objects on the site. If Trustev.js is not included on every page, we not be able to monitor the customer's behaviour correctly, leading to an incomplete view of the customer and their activitty. This can result in an inaccurate Trustev Score.
 
 ### 2.2 Trustev Social Authentication
 
@@ -53,8 +55,6 @@ You can add this div anywhere within the body tags of your page.
 
 Trustev.js brings with it a whole host of functions to help secure your site, but also to help make your eCommerce process more friction less for your customers.
 
-Trustev.js brings with it a whole host of functions to help secure your site, but also to help make your eCommerce process more friction less for your customers.
-
 ### 3.1 Trustev Social Authentication
 
 Trustev.js helps to bring Social Authentication to your web site. Social Authenticaiton enables customers to sign in with one of their social network accounts, such as Facebook, Twitter or LinkedIn. Using Trustev Social Authentication is the quickest way to integrate Social Authentication into your site.
@@ -65,7 +65,7 @@ However, if you already have Social Authentication built into your site, you can
 
 Integrating Trustev.js into your site brings a whole host of functions to improve the customer experience. One of these is Trustev Auto Fill. Trustev Auto Fill populates your eCommerce process with the customer’s personal details, such as name, contact details and delivery/billing address.
 
-Trustev Auto Fill can be used in conjunction with Trustev Social Authenticaiton. With Trustev Social Authenticaiton enabled, any customer that signs in using a social network will automatically have their details pre-populated into their checkout form. This signiifcantally reduces the amount of time required by the customer to complete the order, and has been proven to increase conversion rates.
+Trustev Auto Fill can be used in conjunction with Trustev Social Authentication. With Trustev Social Authenticaiton enabled, any customer that signs in using a social network will automatically have their details pre-populated into their checkout form. This signiifcantally reduces the amount of time required by the customer to complete the order, and has been proven to increase conversion rates.
 
 If you have chosen to disable Trustev Social Authentication, you can still use Trustev Auto Fill. Trustev Auto Fill will work in combination with Social Network details that you share with us via the Trustev API, and will return the customer’s details to you, where you can choose how to handle this data. For more information on this, please see Section 5.1 of this document.
 
@@ -91,10 +91,8 @@ Once you have done that, add the following code to the same page where you are d
 This code must be added <b>after</b> your reference to Trustev.js.
 
     <script type=”text/javascript”>
-      //create the Trustev Queue
-      var _trustevQ = TrustevQ || [];
       //add a new transaction to the Trustev Queue
-      _trustevQ.push([‘_addTrans’,
+      Trustev.JS.Transaction.Push([‘_addTrans’,
         ‘<Transaction Number>’,
         <Total Before Tax>,
         <Total Discount>,
@@ -104,7 +102,7 @@ This code must be added <b>after</b> your reference to Trustev.js.
       ]);
       //add a new item to the just created transaction
       //this must be called for every item in the cart
-      _trustevQ.push([‘_addItem’,
+      Trustev.JS.Transaction.Push([‘_addItem’,
         ‘<Product Name>’,
         ‘<Product Sku>’,
         ‘<Product Category>’,
@@ -117,7 +115,7 @@ This code must be added <b>after</b> your reference to Trustev.js.
       ]);
       //once all items have been added to the transaction
       //you can commit the transaction to Trustev
-      _trustevQ.push([‘_trackTrans’]);
+      Trustev.JS.Transaction.Commit();
     </script>
 
 
@@ -127,7 +125,7 @@ Once you have implemented this code, and commited the transaction to Trustev, Tr
 ## 5.0 Custom Integration
 =========================
 
-When a basic integration of the Trustev.js module does not work for you, Trustev can facilitate a custom integration. There are 2 customer integration options available, the one you choose depends on how you answer the following question:
+When a basic integration of the Trustev.js module does not work for you, Trustev can facilitate a custom integration. There are 2 custom integration options available, the one you choose depends on how you answer the following question:
 
 <i>Do you have an existing social layer (i.e. sign in with Facebook/Twitter/LinkedIn) on your site?</i>
 
@@ -148,7 +146,7 @@ Step 2: Download the Trustev ‘Social and Transaction API Documentation’ from
 
 Step 3: Follow the instructions in this document to integrate with the Trustev API
 
-When calling the ‘Add Transaction’ method in the API, you are required to pass over a Trustev Session Id in the request. The Trustev Session Id is stored in a Javascript variable named <b>_teSessionId</b>. There is also a second variable called <b>_teDigitalSignature</b>. This variable is hashed and encrypted so as to prevent any tampering with the Trustev Session Id. Details of how to read this variable are in section 5.1.1. The final variable available is <b>_teTimestamp</b>, which is used during the validation of the Session Id and Digital Signature.
+When calling the ‘Add Transaction’ method in the API, you are required to pass over a Trustev Session Id in the request. The Trustev Session Id is stored in a Javascript variable that can be accessed in <b>Trustev.JS.SessionId</b>. There is also a second variable called <b>Trustev.JS.DigitalSignature</b>. This variable is hashed and encrypted so as to prevent any tampering with the Trustev Session Id. Details of how to read this variable are in section 5.1.1. The final variable available is <b>Trustev.JS.Timestamp</b>, which is used during the validation of the Session Id and Digital Signature.
 
 
 Once you have followed the Trustev API integration steps, you can test your integration by simply passing over the necessary data to our system.
@@ -157,7 +155,7 @@ Once you have followed the Trustev API integration steps, you can test your inte
 
 #### 5.1.1 The Trustev Session Id
 
-To protect the Trustev Session Id from hijacking, Trusted includes a hashed digital signature. This signature is a Sha256Hash, the format of which is explained below. If you are reading the Trustev Session Id for any purpose, you should always check the signature to ensure if it is valid.
+To protect the Trustev Session Id from hijacking, Trustev includes a hashed digital signature. This signature is a Sha256Hash, the format of which is explained below. If you are reading the Trustev Session Id for any purpose, you should always check the signature to ensure if it is valid.
 
 <b>If the signature is not valid, then the session has been tampered with. You should immediately reject the order.</b>
 
@@ -173,7 +171,7 @@ With this custom integration of Trustev.js, you can use Trustev’s social layer
 
 Step 1: Integrate Trustev.js as in Section 2.1 of this document
 
-Step 2: Integrate Trustev Social Authenticaiton, as in Section 2.2 of this document.
+Step 2: Integrate Trustev Social Authentication, as in Section 2.2 of this document.
 
 Step 3: Integrate the Trustev Profile request javascript as in Section 3.1 of this document
 
@@ -214,7 +212,7 @@ Localisation of Trustev.js into different languages is possible, by simply appen
 
 For example, if you wanted to request US English, your code would be en-US. If you wanted to request Swiss French, you would request fr-CH.
 
-If you wanted to request GB English, your refernce to Trustev.js would now look like the following:
+If you wanted to request GB English, your reference to Trustev.js would now look like the following:
 
       <script type=”text/javascript” src=”https://js.trustev.com/v1/Trustev.js?key=publickey&culture=en-GB” />
 
