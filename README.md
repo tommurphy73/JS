@@ -39,7 +39,7 @@ Phase 1 of integrating Trustev into you site just requires you to add a referenc
 
 ### 2.1 Trustev.js
 
-To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from trustev.com.
+To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from http://trustev.com/Reliance.
 
 Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the opening head tag, and the closing head tag.
 
@@ -48,5 +48,6 @@ Once you have your public key, you can integrate Trustev.js into your site with 
         <script type=”text/javascript” src=”https://js.trustev.com/v1.1/Trustev.js?key=publickey”></script>
      </head>
 	 
-You should integrate Trustev.js in every page in your site. Trustev.js collects data about how the customer is using your site, including device information and their interaction with objects on the site. If Trustev.js is not included on every page, we not be able to monitor the customer's behaviour correctly, leading to an incomplete view of the customer and their activitty. This can result in an inaccurate Trustev Score.
+You should integrate Trustev.js in every page in your site. Trustev.js collects data about how the customer is using your site, including device information and their interaction with objects on the site. If Trustev.js is not included on every page, we not be able to monitor the customer's behaviour correctly, leading to an incomplete view of the customer and their activity. This can result in an inaccurate Trustev Score.
 
+Next, you'll need to integrate the API for Phase 2.
