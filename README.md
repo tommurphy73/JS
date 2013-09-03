@@ -50,4 +50,4 @@ Once you have your public key, you can integrate Trustev.js into your site with 
 	 
 You should integrate Trustev.js in every page in your site. Trustev.js collects data about how the customer is using your site, including device information and their interaction with objects on the site. If Trustev.js is not included on every page, we not be able to monitor the customer's behaviour correctly, leading to an incomplete view of the customer and their activity. This can result in an inaccurate Trustev Score.
 
-Next, you'll need to integrate the API for Phase 2.
+Next, you'll need to integrate the <a href="https://github.com/Trustev/API">API</a> for Phase 2.
