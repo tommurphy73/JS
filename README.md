@@ -39,7 +39,7 @@ Phase 1 of integrating Trustev into you site just requires you to add a referenc
 
 ### 2.1 Trustev.js
 
-To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from http://trustev.com/Reliance.
+To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from ,<a href="http://trustev.com/Reliance">Trustev Reliance</a>.
 
 Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the opening head tag, and the closing head tag.
 
