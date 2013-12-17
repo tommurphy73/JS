@@ -40,32 +40,40 @@ The first stage of the validation of the Digital Signature is to listen out for 
 
 The below Javascript function creates the required string for this. If this Javascript function is never hit, simple proceed to Stage 2.
 
-	function TrustevAuthenticationHook(result)
+	function TrustevAuthenticationHook(result) 
 	{
-	    var stage1 = "";
-	    
-	    if (result != null && result.profile != null)
-	    {
-	        if (result.profile.trustevId != null)
-	        {
-	            stage1 += result.profile.trustevId.value;
-	        }
-	        
-	        if (result.profile.emailAddress != null)
-	        {
-	            if (stage1 != null)
-	            {
-	                stage1 += ".";
-	            }
-	            stage1 += result.profile.emailAddress.value;
-	        }
-	        
-	        if (stage1 != null)
-	        {
-	            stage1 = "." + stage1
-	        }
-	    }
-	}
+            var stage1 = '';
+
+            if (result != null && result.profile != null) 
+            {
+                if (result.profile.trustevId != null) 
+                {
+                    stage1 += result.profile.trustevId.value;
+                }
+
+                if (result.profile.emailAddress != null && result.profile.emailAddress.value != "") 
+                {
+                    if (stage1 != null) {
+                        stage1 += ".";
+                    }
+                    stage1 += result.profile.emailAddress.value;
+                }
+                
+                //Validate the signature by sharing the following parameters with your server side logic
+                // + result.profile.digitalSignature.value
+                // + result.profile.digitalSignatureTimestamp.value
+                // + Trustev.SessionId
+                // + stage1
+            }
+            else
+            {
+            	//Validate the signature by sharing the following parameters with your server side logic
+                // + Trustev.DigitalSignature
+                // + Trustev.Timestamp
+                // + Trustev.SessionId
+                // + stage1
+            }
+        }
 
 For the purpose of Stage 2, the result of this shall be referred to as [Stage 1].
 
