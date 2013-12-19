@@ -12,12 +12,16 @@ Phase 1 of integrating Trustev into you site just requires you to add a referenc
 
 To integrate Trustev.js into your website, you need to insert a reference to Trustev.js in your site. To do this, you will need to get your Public Key from <a href="http://trustev.com/Reliance">Trustev Reliance</a>.
 
-Once you have your public key, you can integrate Trustev.js into your site with just one line of code. This line of code must be placed between the opening head tag, and the closing head tag.
+Once you have your public key, you can integrate Trustev.js using the below code, which can either be placed within the <head> section of your site, or before the closing </body> tag. You should embed Trustev.js across all pages in your site.
 
 
-     <head>
-        <script type=”text/javascript” src=”https://js.trustev.com/v1.1/Trustev.js?key=publickey”></script>
-     </head>
+     <script type='text/javascript'>
+     	(function() {
+     		var tv = document.createElement('script'); tv.type = 'text/javascript'; tv.async = true;
+     		tv.src = 'https://js.trustev.com/v1.1/Trustev.js?key=publickey';
+     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tv, s);
+     	})();
+     </script>
 	 
 You should integrate Trustev.js in every page in your site. Trustev.js collects data about how the customer is using your site, including device information and their interaction with objects on the site. If Trustev.js is not included on every page, we not be able to monitor the customer's behaviour correctly, leading to an incomplete view of the customer and their activity. This can result in an inaccurate Trustev Score.
 
